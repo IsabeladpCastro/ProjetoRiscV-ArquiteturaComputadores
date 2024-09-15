@@ -1,0 +1,947 @@
+TimeQuest Timing Analyzer report for Projeto-RiscV-Arq
+Fri Sep 13 16:38:29 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1100mV 85C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1100mV 85C Model Setup Summary
+  8. Slow 1100mV 85C Model Hold Summary
+  9. Slow 1100mV 85C Model Recovery Summary
+ 10. Slow 1100mV 85C Model Removal Summary
+ 11. Slow 1100mV 85C Model Minimum Pulse Width Summary
+ 12. Setup Times
+ 13. Hold Times
+ 14. Clock to Output Times
+ 15. Minimum Clock to Output Times
+ 16. Slow 1100mV 85C Model Metastability Report
+ 17. Slow 1100mV 0C Model Fmax Summary
+ 18. Slow 1100mV 0C Model Setup Summary
+ 19. Slow 1100mV 0C Model Hold Summary
+ 20. Slow 1100mV 0C Model Recovery Summary
+ 21. Slow 1100mV 0C Model Removal Summary
+ 22. Slow 1100mV 0C Model Minimum Pulse Width Summary
+ 23. Setup Times
+ 24. Hold Times
+ 25. Clock to Output Times
+ 26. Minimum Clock to Output Times
+ 27. Slow 1100mV 0C Model Metastability Report
+ 28. Fast 1100mV 85C Model Setup Summary
+ 29. Fast 1100mV 85C Model Hold Summary
+ 30. Fast 1100mV 85C Model Recovery Summary
+ 31. Fast 1100mV 85C Model Removal Summary
+ 32. Fast 1100mV 85C Model Minimum Pulse Width Summary
+ 33. Setup Times
+ 34. Hold Times
+ 35. Clock to Output Times
+ 36. Minimum Clock to Output Times
+ 37. Fast 1100mV 85C Model Metastability Report
+ 38. Fast 1100mV 0C Model Setup Summary
+ 39. Fast 1100mV 0C Model Hold Summary
+ 40. Fast 1100mV 0C Model Recovery Summary
+ 41. Fast 1100mV 0C Model Removal Summary
+ 42. Fast 1100mV 0C Model Minimum Pulse Width Summary
+ 43. Setup Times
+ 44. Hold Times
+ 45. Clock to Output Times
+ 46. Minimum Clock to Output Times
+ 47. Fast 1100mV 0C Model Metastability Report
+ 48. Multicorner Timing Analysis Summary
+ 49. Setup Times
+ 50. Hold Times
+ 51. Clock to Output Times
+ 52. Minimum Clock to Output Times
+ 53. Board Trace Model Assignments
+ 54. Input Transition Times
+ 55. Signal Integrity Metrics (Slow 1100mv 0c Model)
+ 56. Signal Integrity Metrics (Slow 1100mv 85c Model)
+ 57. Signal Integrity Metrics (Fast 1100mv 0c Model)
+ 58. Signal Integrity Metrics (Fast 1100mv 85c Model)
+ 59. Setup Transfers
+ 60. Hold Transfers
+ 61. Report TCCS
+ 62. Report RSKM
+ 63. Unconstrained Paths
+ 64. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Projeto-RiscV-Arq                                                 ;
+; Device Family      ; Cyclone V                                                         ;
+; Device Name        ; 5CEBA4F23C7                                                       ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Enabled                                                           ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ;
++---------------------------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+; Clock Name                                                                                        ; Type      ; Period ; Frequency  ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master                                                                                          ; Source                                                                                               ; Targets                                                                                               ;
++---------------------------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+; CLOCK_50                                                                                          ; Base      ; 20.000 ; 50.0 MHz   ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                                 ;                                                                                                      ; { CLOCK_50 }                                                                                          ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; Generated ; 3.333  ; 300.03 MHz ; 0.000 ; 1.666  ; 50.00      ; 1         ; 6           ;       ;        ;           ;            ; false    ; CLOCK_50                                                                                        ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin      ; { inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] }   ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[1]   ; Generated ; 3.333  ; 300.03 MHz ; 0.000 ; 1.666  ; 50.00      ; 1         ; 6           ;       ;        ;           ;            ; false    ; CLOCK_50                                                                                        ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin      ; { inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[1] }   ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[2]   ; Generated ; 3.333  ; 300.03 MHz ; 0.000 ; 1.666  ; 50.00      ; 1         ; 6           ;       ;        ;           ;            ; false    ; CLOCK_50                                                                                        ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin      ; { inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[2] }   ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[3]   ; Generated ; 3.333  ; 300.03 MHz ; 0.000 ; 1.666  ; 50.00      ; 1         ; 6           ;       ;        ;           ;            ; false    ; CLOCK_50                                                                                        ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin      ; { inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[3] }   ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[4]   ; Generated ; 3.333  ; 300.03 MHz ; 0.000 ; 1.666  ; 50.00      ; 1         ; 6           ;       ;        ;           ;            ; false    ; CLOCK_50                                                                                        ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin      ; { inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[4] }   ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[5]   ; Generated ; 3.333  ; 300.03 MHz ; 0.000 ; 1.666  ; 50.00      ; 1         ; 6           ;       ;        ;           ;            ; false    ; CLOCK_50                                                                                        ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin      ; { inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[5] }   ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[6]   ; Generated ; 3.333  ; 300.03 MHz ; 0.000 ; 1.666  ; 50.00      ; 1         ; 6           ;       ;        ;           ;            ; false    ; CLOCK_50                                                                                        ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin      ; { inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[6] }   ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[7]   ; Generated ; 3.333  ; 300.03 MHz ; 0.000 ; 1.666  ; 50.00      ; 1         ; 6           ;       ;        ;           ;            ; false    ; CLOCK_50                                                                                        ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin      ; { inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[7] }   ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; Generated ; 40.000 ; 25.0 MHz   ; 0.000 ; 20.000 ; 50.00      ; 12        ; 1           ;       ;        ;           ;            ; false    ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|vco0ph[0] ; { inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk } ;
+; onepulse:inst|PB_single_pulse                                                                     ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                                 ;                                                                                                      ; { onepulse:inst|PB_single_pulse }                                                                     ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; Base      ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500  ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                                 ;                                                                                                      ; { VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] }                                                  ;
++---------------------------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                                                                                                      ;
++------------+-----------------+---------------------------------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                                        ; Note ;
++------------+-----------------+---------------------------------------------------------------------------------------------------+------+
+; 56.62 MHz  ; 56.62 MHz       ; onepulse:inst|PB_single_pulse                                                                     ;      ;
+; 142.07 MHz ; 142.07 MHz      ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 324.99 MHz ; 324.99 MHz      ; CLOCK_50                                                                                          ;      ;
++------------+-----------------+---------------------------------------------------------------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary                                                                                         ;
++---------------------------------------------------------------------------------------------------+---------+---------------+
+; Clock                                                                                             ; Slack   ; End Point TNS ;
++---------------------------------------------------------------------------------------------------+---------+---------------+
+; onepulse:inst|PB_single_pulse                                                                     ; -16.663 ; -44512.894    ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; -9.954  ; -51.318       ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; -1.365  ; -6.850        ;
+; CLOCK_50                                                                                          ; 16.923  ; 0.000         ;
++---------------------------------------------------------------------------------------------------+---------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary                                                                                         ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                             ; Slack  ; End Point TNS ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; -0.336 ; -1.059        ;
+; onepulse:inst|PB_single_pulse                                                                     ; 0.749  ; 0.000         ;
+; CLOCK_50                                                                                          ; 1.219  ; 0.000         ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; 1.517  ; 0.000         ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+
+
+------------------------------------------
+; Slow 1100mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Slow 1100mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Minimum Pulse Width Summary                                                                          ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                             ; Slack  ; End Point TNS ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; onepulse:inst|PB_single_pulse                                                                     ; -0.538 ; -2645.114     ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; 0.154  ; 0.000         ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
+; CLOCK_50                                                                                          ; 9.094  ; 0.000         ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.639 ; 0.000         ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 0.323 ; 0.642 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 0.323 ; 0.642 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 1.417 ; 1.191 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 1.417 ; 1.191 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                                                     ;
++-----------+------------+--------+--------+------------+---------------------------------------------------------------------------------------------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                                                                   ;
++-----------+------------+--------+--------+------------+---------------------------------------------------------------------------------------------------+
+; HSync     ; CLOCK_50   ; 11.180 ; 11.793 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_BLUE  ; CLOCK_50   ; 10.350 ; 10.714 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_GREEN ; CLOCK_50   ; 10.969 ; 11.548 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_RED   ; CLOCK_50   ; 10.924 ; 11.631 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VS        ; CLOCK_50   ; 11.294 ; 12.126 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
++-----------+------------+--------+--------+------------+---------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                                           ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                                                                   ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; HSync     ; CLOCK_50   ; 8.155 ; 8.588 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_BLUE  ; CLOCK_50   ; 7.433 ; 7.736 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_GREEN ; CLOCK_50   ; 7.962 ; 8.392 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_RED   ; CLOCK_50   ; 7.960 ; 8.599 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VS        ; CLOCK_50   ; 8.292 ; 9.029 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+
+
+----------------------------------------------
+; Slow 1100mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                                                                                                       ;
++------------+-----------------+---------------------------------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                                        ; Note ;
++------------+-----------------+---------------------------------------------------------------------------------------------------+------+
+; 57.62 MHz  ; 57.62 MHz       ; onepulse:inst|PB_single_pulse                                                                     ;      ;
+; 139.3 MHz  ; 139.3 MHz       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 332.67 MHz ; 332.67 MHz      ; CLOCK_50                                                                                          ;      ;
++------------+-----------------+---------------------------------------------------------------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Setup Summary                                                                                          ;
++---------------------------------------------------------------------------------------------------+---------+---------------+
+; Clock                                                                                             ; Slack   ; End Point TNS ;
++---------------------------------------------------------------------------------------------------+---------+---------------+
+; onepulse:inst|PB_single_pulse                                                                     ; -16.354 ; -43581.334    ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; -9.910  ; -51.184       ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; -1.093  ; -5.257        ;
+; CLOCK_50                                                                                          ; 16.994  ; 0.000         ;
++---------------------------------------------------------------------------------------------------+---------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary                                                                                          ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                             ; Slack  ; End Point TNS ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; -0.484 ; -2.232        ;
+; onepulse:inst|PB_single_pulse                                                                     ; 0.751  ; 0.000         ;
+; CLOCK_50                                                                                          ; 1.188  ; 0.000         ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; 1.663  ; 0.000         ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+
+
+-----------------------------------------
+; Slow 1100mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Slow 1100mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Minimum Pulse Width Summary                                                                           ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                             ; Slack  ; End Point TNS ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; onepulse:inst|PB_single_pulse                                                                     ; -0.538 ; -2589.959     ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; 0.209  ; 0.000         ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
+; CLOCK_50                                                                                          ; 9.087  ; 0.000         ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.588 ; 0.000         ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 0.329 ; 0.652 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 0.329 ; 0.652 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 1.358 ; 1.127 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 1.358 ; 1.127 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                                                     ;
++-----------+------------+--------+--------+------------+---------------------------------------------------------------------------------------------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                                                                   ;
++-----------+------------+--------+--------+------------+---------------------------------------------------------------------------------------------------+
+; HSync     ; CLOCK_50   ; 10.831 ; 11.514 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_BLUE  ; CLOCK_50   ; 10.061 ; 10.471 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_GREEN ; CLOCK_50   ; 10.636 ; 11.254 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_RED   ; CLOCK_50   ; 10.628 ; 11.347 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VS        ; CLOCK_50   ; 10.975 ; 11.814 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
++-----------+------------+--------+--------+------------+---------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                                           ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                                                                   ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; HSync     ; CLOCK_50   ; 7.881 ; 8.388 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_BLUE  ; CLOCK_50   ; 7.214 ; 7.556 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_GREEN ; CLOCK_50   ; 7.702 ; 8.177 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_RED   ; CLOCK_50   ; 7.752 ; 8.404 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VS        ; CLOCK_50   ; 8.060 ; 8.812 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+
+
+---------------------------------------------
+; Slow 1100mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Setup Summary                                                                                        ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                             ; Slack  ; End Point TNS ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; onepulse:inst|PB_single_pulse                                                                     ; -9.151 ; -23907.395    ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; -5.059 ; -24.563       ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; -0.761 ; -3.554        ;
+; CLOCK_50                                                                                          ; 17.945 ; 0.000         ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary                                                                                        ;
++---------------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                             ; Slack ; End Point TNS ;
++---------------------------------------------------------------------------------------------------+-------+---------------+
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.152 ; 0.000         ;
+; onepulse:inst|PB_single_pulse                                                                     ; 0.301 ; 0.000         ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; 0.614 ; 0.000         ;
+; CLOCK_50                                                                                          ; 0.670 ; 0.000         ;
++---------------------------------------------------------------------------------------------------+-------+---------------+
+
+
+------------------------------------------
+; Fast 1100mV 85C Model Recovery Summary ;
+------------------------------------------
+No paths to report.
+
+
+-----------------------------------------
+; Fast 1100mV 85C Model Removal Summary ;
+-----------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Minimum Pulse Width Summary                                                                          ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                             ; Slack  ; End Point TNS ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; onepulse:inst|PB_single_pulse                                                                     ; 0.029  ; 0.000         ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; 0.307  ; 0.000         ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
+; CLOCK_50                                                                                          ; 9.083  ; 0.000         ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.898 ; 0.000         ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 0.333 ; 0.949 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 0.333 ; 0.949 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 0.666 ; 0.128 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 0.666 ; 0.128 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                                                   ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                                                                   ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; HSync     ; CLOCK_50   ; 5.812 ; 6.408 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_BLUE  ; CLOCK_50   ; 5.331 ; 5.717 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_GREEN ; CLOCK_50   ; 5.712 ; 6.287 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_RED   ; CLOCK_50   ; 5.815 ; 6.491 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VS        ; CLOCK_50   ; 6.103 ; 6.889 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                                           ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                                                                   ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; HSync     ; CLOCK_50   ; 4.334 ; 4.821 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_BLUE  ; CLOCK_50   ; 3.917 ; 4.265 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_GREEN ; CLOCK_50   ; 4.244 ; 4.721 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_RED   ; CLOCK_50   ; 4.373 ; 5.004 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VS        ; CLOCK_50   ; 4.637 ; 5.360 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+
+
+----------------------------------------------
+; Fast 1100mV 85C Model Metastability Report ;
+----------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Setup Summary                                                                                         ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                             ; Slack  ; End Point TNS ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; onepulse:inst|PB_single_pulse                                                                     ; -7.981 ; -20917.694    ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; -4.707 ; -22.796       ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; -0.527 ; -2.307        ;
+; CLOCK_50                                                                                          ; 18.143 ; 0.000         ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary                                                                                         ;
++---------------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                             ; Slack ; End Point TNS ;
++---------------------------------------------------------------------------------------------------+-------+---------------+
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.058 ; 0.000         ;
+; onepulse:inst|PB_single_pulse                                                                     ; 0.291 ; 0.000         ;
+; CLOCK_50                                                                                          ; 0.610 ; 0.000         ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; 0.664 ; 0.000         ;
++---------------------------------------------------------------------------------------------------+-------+---------------+
+
+
+-----------------------------------------
+; Fast 1100mV 0C Model Recovery Summary ;
+-----------------------------------------
+No paths to report.
+
+
+----------------------------------------
+; Fast 1100mV 0C Model Removal Summary ;
+----------------------------------------
+No paths to report.
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Minimum Pulse Width Summary                                                                           ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                                             ; Slack  ; End Point TNS ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+; onepulse:inst|PB_single_pulse                                                                     ; 0.074  ; 0.000         ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; 0.345  ; 0.000         ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
+; CLOCK_50                                                                                          ; 9.099  ; 0.000         ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.899 ; 0.000         ;
++---------------------------------------------------------------------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 0.335 ; 0.917 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 0.335 ; 0.917 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 0.593 ; 0.070 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 0.593 ; 0.070 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                                                   ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                                                                   ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; HSync     ; CLOCK_50   ; 5.429 ; 5.917 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_BLUE  ; CLOCK_50   ; 4.964 ; 5.295 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_GREEN ; CLOCK_50   ; 5.305 ; 5.786 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_RED   ; CLOCK_50   ; 5.480 ; 5.985 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VS        ; CLOCK_50   ; 5.729 ; 6.321 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                                           ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                                                                   ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; HSync     ; CLOCK_50   ; 4.001 ; 4.391 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_BLUE  ; CLOCK_50   ; 3.592 ; 3.879 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_GREEN ; CLOCK_50   ; 3.885 ; 4.280 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_RED   ; CLOCK_50   ; 4.079 ; 4.534 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VS        ; CLOCK_50   ; 4.307 ; 4.835 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+
+
+---------------------------------------------
+; Fast 1100mV 0C Model Metastability Report ;
+---------------------------------------------
+No synchronizer chains to report.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                                                                                 ;
++----------------------------------------------------------------------------------------------------+------------+--------+----------+---------+---------------------+
+; Clock                                                                                              ; Setup      ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++----------------------------------------------------------------------------------------------------+------------+--------+----------+---------+---------------------+
+; Worst-case Slack                                                                                   ; -16.663    ; -0.484 ; N/A      ; N/A     ; -0.538              ;
+;  CLOCK_50                                                                                          ; 16.923     ; 0.610  ; N/A      ; N/A     ; 9.083               ;
+;  VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; -9.954     ; 0.614  ; N/A      ; N/A     ; 0.154               ;
+;  inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; N/A        ; N/A    ; N/A      ; N/A     ; 1.666               ;
+;  inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; -1.365     ; -0.484 ; N/A      ; N/A     ; 18.588              ;
+;  onepulse:inst|PB_single_pulse                                                                     ; -16.663    ; 0.291  ; N/A      ; N/A     ; -0.538              ;
+; Design-wide TNS                                                                                    ; -44571.062 ; -2.232 ; 0.0      ; 0.0     ; -2645.114           ;
+;  CLOCK_50                                                                                          ; 0.000      ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; -51.318    ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; N/A        ; N/A    ; N/A      ; N/A     ; 0.000               ;
+;  inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; -6.850     ; -2.232 ; N/A      ; N/A     ; 0.000               ;
+;  onepulse:inst|PB_single_pulse                                                                     ; -44512.894 ; 0.000  ; N/A      ; N/A     ; -2645.114           ;
++----------------------------------------------------------------------------------------------------+------------+--------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 0.335 ; 0.949 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 0.335 ; 0.949 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; KEY[*]    ; CLOCK_50   ; 1.417 ; 1.191 ; Rise       ; CLOCK_50        ;
+;  KEY[0]   ; CLOCK_50   ; 1.417 ; 1.191 ; Rise       ; CLOCK_50        ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                                                                                     ;
++-----------+------------+--------+--------+------------+---------------------------------------------------------------------------------------------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference                                                                                   ;
++-----------+------------+--------+--------+------------+---------------------------------------------------------------------------------------------------+
+; HSync     ; CLOCK_50   ; 11.180 ; 11.793 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_BLUE  ; CLOCK_50   ; 10.350 ; 10.714 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_GREEN ; CLOCK_50   ; 10.969 ; 11.548 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_RED   ; CLOCK_50   ; 10.924 ; 11.631 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VS        ; CLOCK_50   ; 11.294 ; 12.126 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
++-----------+------------+--------+--------+------------+---------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                                                                                           ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference                                                                                   ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+; HSync     ; CLOCK_50   ; 4.001 ; 4.391 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_BLUE  ; CLOCK_50   ; 3.592 ; 3.879 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_GREEN ; CLOCK_50   ; 3.885 ; 4.280 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VGA_RED   ; CLOCK_50   ; 4.079 ; 4.534 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
+; VS        ; CLOCK_50   ; 4.307 ; 4.835 ; Rise       ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;
++-----------+------------+-------+-------+------------+---------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                ;
++-----------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin       ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++-----------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; VGA_RED   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; VGA_GREEN ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; VGA_BLUE  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; VS        ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; HSync     ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++-----------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++-------------------------------------------------------------+
+; Input Transition Times                                      ;
++----------+--------------+-----------------+-----------------+
+; Pin      ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++----------+--------------+-----------------+-----------------+
+; CLOCK_50 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; RESET    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; KEY[0]   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++----------+--------------+-----------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
++-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin       ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; VGA_RED   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.15e-07 V                   ; 2.41 V              ; -0.0492 V           ; 0.181 V                              ; 0.116 V                              ; 4.54e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.15e-07 V                  ; 2.41 V             ; -0.0492 V          ; 0.181 V                             ; 0.116 V                             ; 4.54e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; VGA_GREEN ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.88e-07 V                   ; 2.35 V              ; -0.0185 V           ; 0.153 V                              ; 0.099 V                              ; 4.6e-10 s                   ; 4.48e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.88e-07 V                  ; 2.35 V             ; -0.0185 V          ; 0.153 V                             ; 0.099 V                             ; 4.6e-10 s                  ; 4.48e-10 s                 ; No                        ; Yes                       ;
+; VGA_BLUE  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.88e-07 V                   ; 2.35 V              ; -0.0185 V           ; 0.153 V                              ; 0.099 V                              ; 4.6e-10 s                   ; 4.48e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.88e-07 V                  ; 2.35 V             ; -0.0185 V          ; 0.153 V                             ; 0.099 V                             ; 4.6e-10 s                  ; 4.48e-10 s                 ; No                        ; Yes                       ;
+; VS        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.15e-07 V                   ; 2.41 V              ; -0.0495 V           ; 0.18 V                               ; 0.115 V                              ; 4.54e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.15e-07 V                  ; 2.41 V             ; -0.0495 V          ; 0.18 V                              ; 0.115 V                             ; 4.54e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
+; HSync     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.15e-07 V                   ; 2.41 V              ; -0.0492 V           ; 0.181 V                              ; 0.116 V                              ; 4.54e-10 s                  ; 4.44e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.15e-07 V                  ; 2.41 V             ; -0.0492 V          ; 0.181 V                             ; 0.116 V                             ; 4.54e-10 s                 ; 4.44e-10 s                 ; No                        ; Yes                       ;
++-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin       ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; VGA_RED   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.52e-05 V                   ; 2.38 V              ; -0.032 V            ; 0.204 V                              ; 0.181 V                              ; 4.74e-10 s                  ; 4.85e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.52e-05 V                  ; 2.38 V             ; -0.032 V           ; 0.204 V                             ; 0.181 V                             ; 4.74e-10 s                 ; 4.85e-10 s                 ; No                        ; Yes                       ;
+; VGA_GREEN ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.27e-05 V                   ; 2.34 V              ; -0.0089 V           ; 0.206 V                              ; 0.058 V                              ; 4.97e-10 s                  ; 5.13e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.27e-05 V                  ; 2.34 V             ; -0.0089 V          ; 0.206 V                             ; 0.058 V                             ; 4.97e-10 s                 ; 5.13e-10 s                 ; Yes                       ; Yes                       ;
+; VGA_BLUE  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.27e-05 V                   ; 2.34 V              ; -0.0089 V           ; 0.206 V                              ; 0.058 V                              ; 4.97e-10 s                  ; 5.13e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 2.27e-05 V                  ; 2.34 V             ; -0.0089 V          ; 0.206 V                             ; 0.058 V                             ; 4.97e-10 s                 ; 5.13e-10 s                 ; Yes                       ; Yes                       ;
+; VS        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.52e-05 V                   ; 2.38 V              ; -0.0315 V           ; 0.205 V                              ; 0.182 V                              ; 4.74e-10 s                  ; 4.85e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.52e-05 V                  ; 2.38 V             ; -0.0315 V          ; 0.205 V                             ; 0.182 V                             ; 4.74e-10 s                 ; 4.85e-10 s                 ; No                        ; Yes                       ;
+; HSync     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 2.52e-05 V                   ; 2.38 V              ; -0.032 V            ; 0.204 V                              ; 0.181 V                              ; 4.74e-10 s                  ; 4.85e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 2.52e-05 V                  ; 2.38 V             ; -0.032 V           ; 0.204 V                             ; 0.181 V                             ; 4.74e-10 s                 ; 4.85e-10 s                 ; No                        ; Yes                       ;
++-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv 0c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
++-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin       ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; VGA_RED   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; VGA_GREEN ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; VGA_BLUE  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; VS        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
+; HSync     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
++-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1100mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin       ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; VGA_RED   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
+; VGA_GREEN ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; VGA_BLUE  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; VS        ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
+; HSync     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
++-----------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                                                                                                                                     ;
++---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
+; From Clock                                                                                        ; To Clock                                                                                          ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
+; CLOCK_50                                                                                          ; CLOCK_50                                                                                          ; 1          ; 0        ; 0        ; 0        ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 929        ; 0        ; 0        ; 0        ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0          ; 6        ; 0        ; 0        ;
+; onepulse:inst|PB_single_pulse                                                                     ; onepulse:inst|PB_single_pulse                                                                     ; 1933832895 ; 0        ; 0        ; 0        ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; 0          ; 0        ; 318      ; 0        ;
+; onepulse:inst|PB_single_pulse                                                                     ; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; 0          ; 0        ; 190      ; 0        ;
++---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                                                                                                                                      ;
++---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
+; From Clock                                                                                        ; To Clock                                                                                          ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
++---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
+; CLOCK_50                                                                                          ; CLOCK_50                                                                                          ; 1          ; 0        ; 0        ; 0        ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 929        ; 0        ; 0        ; 0        ;
+; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0          ; 6        ; 0        ; 0        ;
+; onepulse:inst|PB_single_pulse                                                                     ; onepulse:inst|PB_single_pulse                                                                     ; 1933832895 ; 0        ; 0        ; 0        ;
+; inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; 0          ; 0        ; 318      ; 0        ;
+; onepulse:inst|PB_single_pulse                                                                     ; VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]                                                  ; 0          ; 0        ; 190      ; 0        ;
++---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 40    ; 40   ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 5     ; 5    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Sep 13 16:38:05 2024
+Info: Command: quartus_sta Projeto-RiscV-Arq -c Projeto-RiscV-Arq
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 6 combinational loops as latches.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Projeto-RiscV-Arq.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained generated clocks found in the design. Calling "derive_pll_clocks -create_base_clocks"
+Info (332110): Deriving PLL clocks
+    Info (332110): create_clock -period 20.000 -waveform {0.000 10.000} -name CLOCK_50 CLOCK_50
+    Info (332110): create_generated_clock -source {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin} -multiply_by 6 -duty_cycle 50.00 -name {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]} {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]}
+    Info (332110): create_generated_clock -source {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin} -multiply_by 6 -duty_cycle 50.00 -name {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[1]} {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[1]}
+    Info (332110): create_generated_clock -source {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin} -multiply_by 6 -duty_cycle 50.00 -name {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[2]} {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[2]}
+    Info (332110): create_generated_clock -source {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin} -multiply_by 6 -duty_cycle 50.00 -name {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[3]} {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[3]}
+    Info (332110): create_generated_clock -source {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin} -multiply_by 6 -duty_cycle 50.00 -name {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[4]} {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[4]}
+    Info (332110): create_generated_clock -source {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin} -multiply_by 6 -duty_cycle 50.00 -name {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[5]} {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[5]}
+    Info (332110): create_generated_clock -source {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin} -multiply_by 6 -duty_cycle 50.00 -name {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[6]} {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[6]}
+    Info (332110): create_generated_clock -source {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin} -multiply_by 6 -duty_cycle 50.00 -name {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[7]} {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[7]}
+    Info (332110): create_generated_clock -source {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|vco0ph[0]} -divide_by 12 -duty_cycle 50.00 -name {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk} {inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk}
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4]
+    Info (332105): create_clock -period 1.000 -name onepulse:inst|PB_single_pulse onepulse:inst|PB_single_pulse
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
+    Info (332098): Cell: inst2|saida|Mux0~0  from: datad  to: combout
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1100mV 85C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -16.663
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -16.663    -44512.894 onepulse:inst|PB_single_pulse 
+    Info (332119):    -9.954       -51.318 VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] 
+    Info (332119):    -1.365        -6.850 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    16.923         0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is -0.336
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.336        -1.059 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.749         0.000 onepulse:inst|PB_single_pulse 
+    Info (332119):     1.219         0.000 CLOCK_50 
+    Info (332119):     1.517         0.000 VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -0.538
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.538     -2645.114 onepulse:inst|PB_single_pulse 
+    Info (332119):     0.154         0.000 VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] 
+    Info (332119):     1.666         0.000 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     9.094         0.000 CLOCK_50 
+    Info (332119):    18.639         0.000 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+Info: Analyzing Slow 1100mV 0C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
+    Info (332098): Cell: inst2|saida|Mux0~0  from: datad  to: combout
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -16.354
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -16.354    -43581.334 onepulse:inst|PB_single_pulse 
+    Info (332119):    -9.910       -51.184 VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] 
+    Info (332119):    -1.093        -5.257 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    16.994         0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is -0.484
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.484        -2.232 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.751         0.000 onepulse:inst|PB_single_pulse 
+    Info (332119):     1.188         0.000 CLOCK_50 
+    Info (332119):     1.663         0.000 VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -0.538
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.538     -2589.959 onepulse:inst|PB_single_pulse 
+    Info (332119):     0.209         0.000 VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] 
+    Info (332119):     1.666         0.000 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     9.087         0.000 CLOCK_50 
+    Info (332119):    18.588         0.000 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+Info: Analyzing Fast 1100mV 85C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
+    Info (332098): Cell: inst2|saida|Mux0~0  from: datad  to: combout
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -9.151
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -9.151    -23907.395 onepulse:inst|PB_single_pulse 
+    Info (332119):    -5.059       -24.563 VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] 
+    Info (332119):    -0.761        -3.554 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    17.945         0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.152
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.152         0.000 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.301         0.000 onepulse:inst|PB_single_pulse 
+    Info (332119):     0.614         0.000 VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] 
+    Info (332119):     0.670         0.000 CLOCK_50 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 0.029
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.029         0.000 onepulse:inst|PB_single_pulse 
+    Info (332119):     0.307         0.000 VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] 
+    Info (332119):     1.666         0.000 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     9.083         0.000 CLOCK_50 
+    Info (332119):    18.898         0.000 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+Info: Analyzing Fast 1100mV 0C Model
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
+    Info (332098): Cell: inst2|saida|Mux0~0  from: datad  to: combout
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -7.981
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -7.981    -20917.694 onepulse:inst|PB_single_pulse 
+    Info (332119):    -4.707       -22.796 VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] 
+    Info (332119):    -0.527        -2.307 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    18.143         0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.058
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.058         0.000 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.291         0.000 onepulse:inst|PB_single_pulse 
+    Info (332119):     0.610         0.000 CLOCK_50 
+    Info (332119):     0.664         0.000 VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 0.074
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.074         0.000 onepulse:inst|PB_single_pulse 
+    Info (332119):     0.345         0.000 VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|pixel_row[4] 
+    Info (332119):     1.666         0.000 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     9.099         0.000 CLOCK_50 
+    Info (332119):    18.899         0.000 inst2|b2v_1|video_PLL_inst|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 5213 megabytes
+    Info: Processing ended: Fri Sep 13 16:38:29 2024
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:23
+
+

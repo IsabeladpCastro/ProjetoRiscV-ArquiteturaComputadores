@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Projeto-RiscV-Arq">
+		<CBX_INST_ENTRY INSTANCE_NAME="|BlocoPlaca|VGA_CHARACTER2:inst2|Char_ROM:b2v_inst|LPM_ROM:char_gen_rom|altrom:srom|altsyncram:rom_block" CBX_FILE_NAME="altsyncram_8f61.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|BlocoPlaca|VGA_CHARACTER2:inst2|VGA_SYNC:b2v_1|video_PLL:video_PLL_inst|altpll:altpll_component" CBX_FILE_NAME="altpll_80u.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
